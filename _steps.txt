@@ -1,0 +1,17 @@
+## INSTALL SYMFONY ##
+composer create-project symfony/website-skeleton server
+
+
+## ADD GIT REPO ##
+git init
+git remote add origin https://github.com/julioperales/symfony-api
+
+Modify your .gitignore if needed
+
+git add .
+git commit -m "First Commit"
+git push origin master
+
+
+## CONFIG DATABASE ##
+Modify .env with your connection
