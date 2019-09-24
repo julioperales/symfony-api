@@ -25,3 +25,27 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+
+# FOS user config
+fos_user:
+    db_driver:      orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name:  main
+    user_class:     App\Entity\User
+    from_email:
+        address: "no-reply@prodigious.com"
+        sender_name: "Prodigious"
+    registration:
+#        form:
+#            type: AppBundle\Form\UserRegisterType
+        confirmation:
+            enabled: true
+            template:   FOSUserBundle:Registration:email.txt.twig
+            from_email:
+                address:        "no-reply@prodigious.com"
+                sender_name:    "No Reply Registration"
+    service:
+        mailer: fos_user.mailer.twig_swift
+    resetting:
+        email:
+            template:   FOSUserBundle:Resetting:email.txt.twig

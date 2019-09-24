@@ -1,3 +1,5 @@
+https://medium.com/@joeymasip/how-to-create-an-api-with-symfony-4-and-jwt-b2334a8fbec2
+
 ## INSTALL SYMFONY ##
 composer create-project symfony/website-skeleton server
 
@@ -15,3 +17,42 @@ git push origin master
 
 ## CONFIG DATABASE ##
 Modify .env with your connection
+
+## BASICS ##
+composer require symfony/orm-pack
+composer require --dev symfony/maker-bundle
+
+composer config extra.symfony.allow-contrib true
+composer req symfony/apache-pack
+
+
+## USER BUNDLE ##
+composer require friendsofsymfony/user-bundle "~2.0"
+
+Modify config/services.yaml
+config/packages/security.yaml
+
+Generate Entity User.
+
+Force update schema
+php bin/console doctrine:schema:update --force
+
+
+## Add routes ##
+config/routes.yaml
+
+Create controller api/controller
+
+Create User
+curl -X POST -H "Content-Type: application/json" http://localhost/apitest/server/api/auth/register -d '{"username":"patata","password":"nurun123", "email":"juliodelosperales@prodigious.com"}'
+
+
+## JWT ##
+
+composer require lexik/jwt-authentication-bundle
+
+mkdir config/JWT
+
+Generate keys and passphrase
+
+Update config and lexic_jwt_authentication_bundle.yaml
