@@ -56,3 +56,12 @@ mkdir config/JWT
 Generate keys and passphrase
 
 Update config and lexic_jwt_authentication_bundle.yaml
+
+
+## NELMIO ##
+
+composer require twig asset
+composer require nelmio/api-doc-bundle
+
+#config/packages/nelmio_api_doc.yaml
+#config/routes/nelmio_api_doc.yaml
