@@ -65,3 +65,16 @@ composer require nelmio/api-doc-bundle
 
 #config/packages/nelmio_api_doc.yaml
 #config/routes/nelmio_api_doc.yaml
+
+composer req cors
+#config/packages/nelmio_cors.yaml
+
+
+## GENERATE sample ENTITY ##
+console make:entity Register ..
+php bin/console doctrine:schema:update --force
+
+## AUTOMAPPER ##
+composer require mark-gerarts/automapper-plus-bundle
+- Create DTO
+- Create Mappings

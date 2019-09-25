@@ -15,7 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class ApiAuthController extends AbstractController
 {
     /**
-     * @Route("/register", name="api_auth_register",  methods={"POST", "GET"})
+     * @Route("/register", name="api_auth_register",  methods={"POST"})
      * @param Request $request
      * @param UserManagerInterface $userManager
      * @return JsonResponse|\Symfony\Component\HttpFoundation\RedirectResponse
@@ -62,12 +62,5 @@ class ApiAuthController extends AbstractController
             return new JsonResponse(["error" => $e->getMessage()], 500);
         }
         return new JsonResponse(["success" => $user->getUsername(). " has been registered!"], 200);
-    }
-
-    /**
-     * @Route ("/test", name="test_api")
-     */
-    public function test(){        
-        return new JsonResponse(["test" => "test"]);
     }
 }
