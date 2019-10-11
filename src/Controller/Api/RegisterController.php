@@ -94,7 +94,7 @@ class RegisterController extends AbstractController
     }
 
     /**
-     * @Route("/",  methods={"PUT"})
+     * @Route("/",  methods={"POST"})
      *
      */
     public function setRegister(Request $request){        
@@ -133,7 +133,7 @@ class RegisterController extends AbstractController
     }
 
     /**
-     * @Route("/{id}",  methods={"POST"})
+     * @Route("/{id}",  methods={"PUT"})
      *
      */
     public function updateRegister(Request $request, int $id){
